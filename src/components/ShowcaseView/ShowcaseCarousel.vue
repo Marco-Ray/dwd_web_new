@@ -10,7 +10,7 @@
         develop and define that which surrounds us.
       </div>
     </div>
-    <el-carousel :interval="4000" type="card" :autoplay="true" trigger="click" indicator-position="none">
+    <el-carousel :interval="4000" type="card" :autoplay="false" trigger="click" indicator-position="none">
       <el-carousel-item v-for="(item, index) in trackProjects.projects" :key="index">
         <div class="project-img-box">
           <div class="view-more" @click="viewMore(index)">
@@ -185,8 +185,37 @@ export default {
 }
 
 @media screen and (max-width: 414px) {
-  .title {
-    font-size: fSizeCalc(28);
+  .info {
+    .title {
+      margin-top: 0;
+      font-size: fSizeCalc(28);
+    }
+    .members {
+      font-size: fSizeCalc(14);
+    }
+    .description {
+      font-size: fSizeCalc(12);
+      line-height: fSizeCalc(20);
+      letter-spacing: fSizeCalc(0.15);
+      width: unset;
+    }
+  }
+
+  .el-carousel {
+    ::v-deep .el-carousel__container {
+      height: wCalcM(371);
+    }
+    .el-carousel__item {
+      .project-img-box {
+        height: wCalcM(371);
+        width: hCalcM(247);
+      }
+      &.is-active {
+        .view-more {
+          opacity: 1;
+        }
+      }
+    }
   }
 }
 </style>
