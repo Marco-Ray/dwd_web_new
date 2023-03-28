@@ -1,6 +1,6 @@
 <template>
   <router-view v-slot="{ Component, route }">
-    <transition :name="'fade'" mode="out-in">
+    <transition :name="route.meta.transitionName" mode="out-in">
       <component :is="Component" :key="route.path"/>
     </transition>
   </router-view>
@@ -22,7 +22,7 @@ html, body {
   margin: 0;
   padding: 0;
   font-size: wCalc(16);
-  overflow-x: hidden;
+  //overflow-x: hidden;
 }
 
 @media screen and (max-width: 414px) {
@@ -52,5 +52,31 @@ html, body {
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+}
+
+// slide-up transition
+.slide-up-enter-active,
+.slide-up-leave-active {
+  transition: all 0.75s ease-out;
+}
+
+.slide-up-enter-to {
+  position: absolute;
+  bottom: 0;
+}
+
+.slide-up-enter-from {
+  position: absolute;
+  bottom: -100%;
+}
+
+.slide-up-leave-to {
+  position: absolute;
+  top: -100%;
+}
+
+.slide-up-leave-from {
+  position: absolute;
+  top: 0;
 }
 </style>

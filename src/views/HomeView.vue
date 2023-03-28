@@ -47,7 +47,7 @@ export default {
 }
 
 #nav-bar, #about {
-  padding: 0 32px;
+  margin: 0 32px;
 }
 
 #footer {
@@ -59,7 +59,7 @@ export default {
     -webkit-overflow-scrolling: touch;
   }
   #nav-bar, #about {
-    padding: 0 16px;
+    margin: 0 16px;
   }
   #footer {
     padding: 34px 16px 0 16px;

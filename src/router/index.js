@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
 import ShowcaseLayout from '@/views/ShowcaseLayout/index.vue';
 import ShowcaseView from '@/views/ShowcaseLayout/ShowcaseView.vue';
+import ShowcaseProject from '@/components/ShowcaseView/ShowcaseProject.vue';
 
 const routes = [
   {
@@ -21,6 +22,14 @@ const routes = [
         path: '/showcase/:track',
         name: 'track',
         component: ShowcaseView,
+        meta: {
+          transitionName: 'fade',
+        },
+      },
+      {
+        path: '/showcase/:track/project',
+        name: 'project',
+        component: ShowcaseProject,
         meta: {
           transitionName: 'fade',
         },

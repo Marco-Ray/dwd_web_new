@@ -10,8 +10,8 @@
         develop and define that which surrounds us.
       </div>
     </div>
-    <el-carousel :interval="4000" type="card" :autoplay="false" trigger="click">
-      <el-carousel-item v-for="(item, index) in 10" :key="index">
+    <el-carousel :interval="4000" type="card" :autoplay="true" trigger="click" indicator-position="none">
+      <el-carousel-item v-for="(item, index) in trackProjects.projects" :key="index">
         <div class="project-img-box">
           <div class="view-more" @click="viewMore(index)">
             <div>View work</div>
@@ -31,12 +31,13 @@
 <script>
 import IconGallery from '@/assets/img/Showcase/icon-gallery.png';
 import IconVector from '@/assets/img/Showcase/icon-vector.svg';
-import {mapMutations} from "vuex";
+import { mapMutations } from 'vuex';
 
 export default {
   name: 'ShowcaseCarousel',
   props: {
     Placeholder: String,
+    trackProjects: Object,
   },
   emits: ['switchMode', 'viewMore'],
   data() {
@@ -51,6 +52,8 @@ export default {
     ]),
     switchMode() {
       this.$store.commit('switchViewMode', 'gallery');
+      const newPath = `${this.$route.path}?viewMode=gallery`;
+      this.$router.replace(newPath);
     },
     viewMore(index) {
       this.$emit('viewMore', index);
@@ -63,7 +66,8 @@ export default {
 @import '@/styles/mixin.scss';
 
 .showcase-carousel-container {
-  margin-top: -20px;
+  //margin-top: -20px;
+  height: calc(100vh - 118px);
 }
 
 .info {
@@ -77,7 +81,7 @@ export default {
     font-size: fSizeCalc(36);
     font-weight: normal;
     letter-spacing: 0;
-    margin-top: hCalc(28);
+    margin-top: 32px;
     margin-bottom: hCalc(15);
   }
   .members {
@@ -167,7 +171,7 @@ export default {
 .mode-icon-box {
   position: absolute;
   bottom: 17px;
-  right: 32px;
+  right: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -177,6 +181,12 @@ export default {
   .mode-icon {
     width: 30px;
     height: 30px;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .title {
+    font-size: fSizeCalc(28);
   }
 }
 </style>
