@@ -21,6 +21,10 @@ export default {
   width: 100%;
   //height: 100vh;
 }
+
+.nav-bar {
+  top: 0;
+}
 .nav-bar, .showcase-viewer {
   margin: 0 32px;
 }

@@ -11,7 +11,7 @@
 }
 
 @function hCalcM($h) {
-  @return calc(100vh / 375 * $h);
+  @return calc(100vh / 812 * $h);
 }
 
 @function fSizeCalc($fs) {

@@ -21,17 +21,56 @@
         </el-menu-item>
       </el-sub-menu>
     </el-menu>
+    <div class="mobile-menu">
+      <div class="icon-menu-box" @click="triggerMobileMenu">
+        <img :src="IconMenu" alt="menu" class="icon-menu"/>
+      </div>
+
+      <div class="mobile-menu__menu" v-show="isShowMobileMenu">
+        <div class="router-box">
+          <router-link :to="{ path: '/', hash: '#main' }" class="router-title">About</router-link>
+        </div>
+
+        <div class="router-box">
+          <div class="router-box">
+            <div class="router-title">Showcase</div>
+          </div>
+          <div class="subtitle-box">
+            <div class="router-box">
+              <router-link :to="{ path: '/showcase/fashion', query: { viewMode: viewMode }}" class="router-subtitle">Fashion Informatics</router-link>
+            </div>
+            <div class="router-box">
+              <router-link :to="{ path: '/showcase/ecology', query: { viewMode: viewMode }}" class="router-subtitle">Designing Ecologies</router-link>
+            </div>
+          </div>
+        </div>
+
+        <div class="social-media-box">
+          <div class="social-media-link">Link</div>
+          <div class="link">
+            <a href="https://www.instagram.com/designwithdata/" target="_blank">@Designwithdata</a>
+          </div>
+          <div class="link">
+            <a href="https://www.instagram.com/inspacegallery/" target="_blank">@inspacegallery</a>
+          </div>
+        </div>
+      </div>
+    </div>
+<!--    <Edit />-->
   </div>
 </template>
 
 <script>
 import LOGO from '@/assets/img/dwd_logo.png';
+import IconMenu from '@/assets/img/HomeView/icon-menu.svg';
 
 export default {
   name: 'NavBar',
   data() {
     return {
       LOGO: LOGO,
+      IconMenu: IconMenu,
+      isShowMobileMenu: false,
     };
   },
   computed: {
@@ -47,6 +86,9 @@ export default {
           document.getElementById('animation-canvas').scrollIntoView({ behavior: 'smooth' });
         }
       });
+    },
+    triggerMobileMenu() {
+      this.isShowMobileMenu = !this.isShowMobileMenu;
     },
   },
 };
@@ -103,10 +145,77 @@ export default {
   }
 }
 
+.mobile-menu {
+  // todo prevent scroll
+  display: none;
+  .mobile-menu__menu {
+    position: absolute;
+    left: 0;
+    top: 118px;
+    width: 100%;
+    height: calc(100vh - 118px);
+    background: black;
+    .router-box {
+      margin-bottom: hCalcM(16);
+    }
+    .router-title {
+      font-family: Helvetica;
+      font-size: fSizeCalc(28);
+      font-weight: 400;
+      line-height: fSizeCalc(28);
+      color: white;
+      text-decoration: none;
+    }
+    .subtitle-box {
+      display: flex;
+      flex-direction: column;
+    }
+    .router-subtitle {
+      font-family: Helvetica Light;
+      font-size: fSizeCalc(18);
+      font-weight: 400;
+      line-height: fSizeCalc(28);
+      color: white;
+      text-decoration: none;
+    }
+    .social-media-box {
+      position: absolute;
+      bottom: hCalcM(62);
+      .link:nth-child(1) {
+        // todo margin
+        margin-bottom: hCalcM(7);
+      }
+    }
+    .social-media-link {
+      font-family: Helvetica;
+      font-size: fSizeCalc(16);
+      line-height: fSizeCalc(28);
+      margin-bottom: hCalcM(20);
+    }
+    a {
+      font-family: Helvetica Light;
+      font-size: fSizeCalc(12);
+      font-weight: 400;
+      line-height: fSizeCalc(20);
+      letter-spacing: fSizeCalc(-0.44);
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
+
 @media screen and (max-width: 414px) {
   .logo-container {
     width: 120px;
     height: 41px;
+  }
+
+  .el-menu-demo {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: block;
   }
 }
 </style>

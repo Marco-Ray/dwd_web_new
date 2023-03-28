@@ -10,7 +10,7 @@
         develop and define that which surrounds us.
       </div>
     </div>
-    <el-carousel :interval="4000" type="card" :autoplay="false" trigger="click" indicator-position="none">
+    <el-carousel :interval="4000" type="card" :autoplay="true" trigger="click" indicator-position="none">
       <el-carousel-item v-for="(item, index) in trackProjects.projects" :key="index">
         <div class="project-img-box">
           <div class="view-more" @click="viewMore(index)">
@@ -208,7 +208,7 @@ export default {
     .el-carousel__item {
       .project-img-box {
         height: wCalcM(371);
-        width: hCalcM(247);
+        width: wCalcM(247);
       }
       &.is-active {
         .view-more {

@@ -122,7 +122,7 @@ export default {
 }
 
 ::v-deep .el-scrollbar__wrap {
-  height: calc(100vh - 224px - fSizeCalc(24));
+  height: calc(100vh - 224px - fSizeCalc(24) - hCalcM(55));
 }
 
 ::v-deep .el-scrollbar__view {

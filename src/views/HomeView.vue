@@ -34,6 +34,7 @@ export default {
   },
   mounted() {
     AOS.init({
+      offset: 10,
     });
   },
 };
