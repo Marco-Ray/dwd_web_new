@@ -1,16 +1,11 @@
 <template>
   <div class="showcase-carousel-container">
     <div class="info">
-      <div class="title">Dynamic Moth</div>
-      <div class="members">Teammate, Teammate, Teammate</div>
-      <div class="description">It makes use of its location to focus on how the nature,
-        quality and potential of the interior can be developed.
-        The Studio is central to such considerations.
-        It is a place where we discuss,
-        develop and define that which surrounds us.
-      </div>
+      <div class="title">{{ currentProject.title }}</div>
+      <div class="members">{{ currentProject.members }}</div>
+      <div class="description">{{ currentProject.description }}</div>
     </div>
-    <el-carousel :interval="4000" type="card" :autoplay="true" trigger="click" indicator-position="none">
+    <el-carousel :interval="4000" type="card" :autoplay="false" trigger="click" indicator-position="none" @change="setProject">
       <el-carousel-item v-for="(item, index) in trackProjects.projects" :key="index">
         <div class="project-img-box">
           <div class="view-more" @click="viewMore(index)">
@@ -44,7 +39,13 @@ export default {
     return {
       IconGallery: IconGallery,
       IconVector: IconVector,
+      currentId: 0,
     };
+  },
+  computed: {
+    currentProject() {
+      return this.trackProjects.projects[this.currentId];
+    },
   },
   methods: {
     ...mapMutations([
@@ -57,6 +58,9 @@ export default {
     },
     viewMore(index) {
       this.$emit('viewMore', index);
+    },
+    setProject(newId) {
+      this.currentId = newId;
     },
   },
 };
@@ -99,6 +103,7 @@ export default {
     letter-spacing: fSizeCalc(0.15);
     text-align: center;
     margin-bottom: 44px;
+    min-height: hCalc(80);
   }
 }
 
@@ -178,6 +183,7 @@ export default {
   width: 30px;
   height: 68px;
   cursor: pointer;
+  z-index: 99;
   .mode-icon {
     width: 30px;
     height: 30px;
@@ -187,10 +193,12 @@ export default {
 @media screen and (max-width: 414px) {
   .info {
     .title {
+      min-height: hCalcM(64);
       margin-top: 0;
-      font-size: fSizeCalc(28);
+      font-size: fSizeCalc(26);
     }
     .members {
+      margin-bottom: hCalcM(26);
       font-size: fSizeCalc(14);
     }
     .description {
@@ -198,17 +206,17 @@ export default {
       line-height: fSizeCalc(20);
       letter-spacing: fSizeCalc(0.15);
       width: unset;
+      height: hCalcM(100);
     }
   }
 
   .el-carousel {
     ::v-deep .el-carousel__container {
-      height: wCalcM(371);
     }
     .el-carousel__item {
       .project-img-box {
-        height: wCalcM(371);
-        width: wCalcM(247);
+        //height: wCalcM(371);
+        //width: wCalcM(247);
       }
       &.is-active {
         .view-more {

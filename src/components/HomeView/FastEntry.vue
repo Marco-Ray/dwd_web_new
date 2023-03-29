@@ -39,6 +39,7 @@ export default {
   display: flex;
   column-gap: 26px;
   cursor: pointer;
+  z-index: 99;
   a {
     text-decoration: none;
     font-family: Helvetica Light;

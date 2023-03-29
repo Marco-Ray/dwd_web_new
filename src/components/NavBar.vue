@@ -21,6 +21,7 @@
         </el-menu-item>
       </el-sub-menu>
     </el-menu>
+
     <div class="mobile-menu">
       <div class="icon-menu-box" @click="triggerMobileMenu">
         <img :src="IconMenu" alt="menu" class="icon-menu"/>
@@ -56,13 +57,16 @@
         </div>
       </div>
     </div>
-<!--    <Edit />-->
   </div>
 </template>
 
 <script>
 import LOGO from '@/assets/img/dwd_logo.png';
 import IconMenu from '@/assets/img/HomeView/icon-menu.svg';
+
+const preD = function (e) {
+  e.preventDefault();
+};
 
 export default {
   name: 'NavBar',
@@ -89,6 +93,19 @@ export default {
     },
     triggerMobileMenu() {
       this.isShowMobileMenu = !this.isShowMobileMenu;
+    },
+  },
+  watch: {
+    // 监听弹出框状态，控制是否禁止页面滑动
+    isShowMobileMenu(flag) {
+      if (flag) {
+        document.getElementById('main').scrollIntoView({ behavior: 'smooth' });
+        document.body.style.overflow = 'hidden';
+        document.addEventListener('touchmove', preD, { passive: false }); // 禁止页面滑动
+      } else {
+        document.body.style.overflow = ''; // 出现滚动条
+        document.removeEventListener('touchmove', preD, { passive: false });
+      }
     },
   },
 };
