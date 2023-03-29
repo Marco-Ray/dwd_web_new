@@ -29,14 +29,13 @@
 
       <div class="mobile-menu__menu" v-show="isShowMobileMenu">
         <div style="margin: 0 16px">
-          <div class="router-box">
+          <div class="router-box about">
             <router-link :to="{ path: '/', hash: '#main' }" class="router-title">About</router-link>
           </div>
 
           <div class="router-box">
-            <div class="router-box">
-              <div class="router-title">Showcase</div>
-            </div>
+            <div class="router-title showcase">Showcase</div>
+
             <div class="subtitle-box">
               <div class="router-box">
                 <router-link :to="{ path: '/showcase/fashion', query: { viewMode: viewMode }}" class="router-subtitle">Fashion Informatics</router-link>
@@ -177,7 +176,10 @@ export default {
     height: calc(100vh - 118px);
     background: black;
     .router-box {
-      margin-bottom: hCalcM(16);
+      &.about {
+        margin-bottom: hCalcM(40);
+      }
+      margin-bottom: hCalcM(4);
     }
     .router-title {
       font-family: Helvetica;
@@ -186,6 +188,9 @@ export default {
       line-height: fSizeCalc(28);
       color: white;
       text-decoration: none;
+      &.showcase {
+        margin-bottom: hCalcM(16);;
+      }
     }
     .subtitle-box {
       display: flex;
