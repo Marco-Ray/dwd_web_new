@@ -137,7 +137,7 @@ export default createStore({
             '\n' +
             'Our goal is to raise awareness about the plight of coral reefs and encourage empathy for these precious ecosystems. We want to show that, with the right interventions, coral can recover and thrive once again.',
           imageWeb: 'https://i.postimg.cc/yxfxZjP7/Dynamic-Coral-website.jpg',
-          imageMobile: 'https://i.postimg.cc/7PnZ8JHV/Dynamic-coral.jpg',
+          imageMobile: 'https://i.postimg.cc/CxJC3PR4/Dynamic-Coral-mobile.jpg',
         },
         {
           index: 1,

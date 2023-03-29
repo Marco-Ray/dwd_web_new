@@ -149,6 +149,7 @@ export default {
     .project-img {
       width: 100%;
       height: 100%;
+      object-fit: cover;
     }
   }
 }
@@ -224,6 +225,7 @@ export default {
       .project-img {
         width: wCalcM(163);
         height: wCalcM(163);
+        object-fit: cover;
       }
     }
   }

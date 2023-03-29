@@ -16,7 +16,7 @@
                      class="text">
           Fashion Informatics
         </router-link>
-        <router-link :to="{ path: '/showcase/fashion', query: { viewMode: viewMode } }"
+        <router-link :to="{ path: '/showcase/ecology', query: { viewMode: viewMode } }"
                      class="text">
           Designing Ecologies
         </router-link>

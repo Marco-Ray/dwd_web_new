@@ -16,7 +16,7 @@
       </div>
 
       <div data-aos="fade-up">
-        <div class="sub-title catalog">Exhibition Catalog</div>
+        <div class="sub-title catalogue">Exhibition Catalogue</div>
         <!--    todo link-->
         <div class="text pdf-link">PDF Download</div>
       </div>

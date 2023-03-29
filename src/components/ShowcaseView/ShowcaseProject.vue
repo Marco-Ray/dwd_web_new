@@ -78,6 +78,10 @@ export default {
       this.$router.replace(`${this.$route.path}?id=${this.project.index}`);
     },
   },
+  // todo
+  updated() {
+    this.$store.commit('setProject', { track: this.$route.params.track, id: this.project.index - 1 });
+  },
 };
 </script>
 
@@ -139,6 +143,7 @@ export default {
       display: flex;
       flex-direction: row;
       column-gap: wCalc(32);
+      white-space: break-spaces;
       .left {
         width: wCalc(745);
         font-family: Helvetica Light;

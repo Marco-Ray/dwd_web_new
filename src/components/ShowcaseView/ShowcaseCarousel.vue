@@ -127,6 +127,7 @@ export default {
       .project-img {
         height: 100%;
         width: 100%;
+        object-fit: cover;
       }
       .view-more {
         display: flex;
@@ -222,8 +223,9 @@ export default {
     }
     .el-carousel__item {
       .project-img-box {
-        //height: wCalcM(371);
-        //width: wCalcM(247);
+        .project-img {
+          object-fit: cover;
+        }
       }
       &.is-active {
         .view-more {
