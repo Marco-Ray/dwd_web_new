@@ -28,31 +28,33 @@
       </div>
 
       <div class="mobile-menu__menu" v-show="isShowMobileMenu">
-        <div class="router-box">
-          <router-link :to="{ path: '/', hash: '#main' }" class="router-title">About</router-link>
-        </div>
-
-        <div class="router-box">
+        <div style="margin: 0 16px">
           <div class="router-box">
-            <div class="router-title">Showcase</div>
+            <router-link :to="{ path: '/', hash: '#main' }" class="router-title">About</router-link>
           </div>
-          <div class="subtitle-box">
-            <div class="router-box">
-              <router-link :to="{ path: '/showcase/fashion', query: { viewMode: viewMode }}" class="router-subtitle">Fashion Informatics</router-link>
-            </div>
-            <div class="router-box">
-              <router-link :to="{ path: '/showcase/ecology', query: { viewMode: viewMode }}" class="router-subtitle">Designing Ecologies</router-link>
-            </div>
-          </div>
-        </div>
 
-        <div class="social-media-box">
-          <div class="social-media-link">Link</div>
-          <div class="link">
-            <a href="https://www.instagram.com/designwithdata/" target="_blank">@Designwithdata</a>
+          <div class="router-box">
+            <div class="router-box">
+              <div class="router-title">Showcase</div>
+            </div>
+            <div class="subtitle-box">
+              <div class="router-box">
+                <router-link :to="{ path: '/showcase/fashion', query: { viewMode: viewMode }}" class="router-subtitle">Fashion Informatics</router-link>
+              </div>
+              <div class="router-box">
+                <router-link :to="{ path: '/showcase/ecology', query: { viewMode: viewMode }}" class="router-subtitle">Designing Ecologies</router-link>
+              </div>
+            </div>
           </div>
-          <div class="link">
-            <a href="https://www.instagram.com/inspacegallery/" target="_blank">@inspacegallery</a>
+
+          <div class="social-media-box">
+            <div class="social-media-link">Social Media</div>
+            <div class="link">
+              <a href="https://www.instagram.com/designwithdata/" target="_blank">@Designwithdata</a>
+            </div>
+            <div class="link">
+              <a href="https://www.instagram.com/inspacegallery/" target="_blank">@inspacegallery</a>
+            </div>
           </div>
         </div>
       </div>
@@ -99,7 +101,9 @@ export default {
     // 监听弹出框状态，控制是否禁止页面滑动
     isShowMobileMenu(flag) {
       if (flag) {
-        document.getElementById('main').scrollIntoView({ behavior: 'smooth' });
+        if (document.getElementById('main')) {
+          document.getElementById('main').scrollIntoView({ behavior: 'smooth' });
+        }
         document.body.style.overflow = 'hidden';
         document.addEventListener('touchmove', preD, { passive: false }); // 禁止页面滑动
       } else {
@@ -163,13 +167,13 @@ export default {
 }
 
 .mobile-menu {
-  // todo prevent scroll
   display: none;
   .mobile-menu__menu {
     position: absolute;
     left: 0;
     top: 118px;
-    width: 100%;
+    width: 100vw;
+    margin: 0 -16px;
     height: calc(100vh - 118px);
     background: black;
     .router-box {
@@ -198,20 +202,20 @@ export default {
     .social-media-box {
       position: absolute;
       bottom: hCalcM(62);
-      .link:nth-child(1) {
-        // todo margin
+      .link {
         margin-bottom: hCalcM(7);
       }
+
     }
     .social-media-link {
       font-family: Helvetica;
-      font-size: fSizeCalc(16);
+      font-size: fSizeCalc(21);
       line-height: fSizeCalc(28);
       margin-bottom: hCalcM(20);
     }
     a {
       font-family: Helvetica Light;
-      font-size: fSizeCalc(12);
+      font-size: fSizeCalc(16);
       font-weight: 400;
       line-height: fSizeCalc(20);
       letter-spacing: fSizeCalc(-0.44);
