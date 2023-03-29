@@ -78,9 +78,8 @@ export default {
       this.$router.replace(`${this.$route.path}?id=${this.project.index}`);
     },
   },
-  // todo
-  updated() {
-    this.$store.commit('setProject', { track: this.$route.params.track, id: this.project.index - 1 });
+  created() {
+    this.$store.commit('setProject', { track: this.$route.params.track, id: this.$route.query.id });
   },
 };
 </script>
