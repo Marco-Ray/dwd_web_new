@@ -9,38 +9,10 @@
 
         <div class="project__grid">
           <div v-for="(item, index) in trackProjects.projects" :key="index" class="project" @click="viewMore(index)">
-            <img :src="Placeholder" alt="student project image" class="project-img">
+            <img :src="item.imageWeb ? item.imageWeb : Placeholder" alt="student project image" class="project-img">
             <div class="project__mask">
-              <div class="project-name">Dynamic Moth</div>
-              <div class="project-member">Teammate, Teammate, Teammate</div>
-            </div>
-          </div>
-          <div v-for="(item, index) in trackProjects.projects" :key="index" class="project" @click="viewMore(index)">
-            <img :src="Placeholder" alt="student project image" class="project-img">
-            <div class="project__mask">
-              <div class="project-name">Dynamic Moth</div>
-              <div class="project-member">Teammate, Teammate, Teammate</div>
-            </div>
-          </div>
-          <div v-for="(item, index) in trackProjects.projects" :key="index" class="project" @click="viewMore(index)">
-            <img :src="Placeholder" alt="student project image" class="project-img">
-            <div class="project__mask">
-              <div class="project-name">Dynamic Moth</div>
-              <div class="project-member">Teammate, Teammate, Teammate</div>
-            </div>
-          </div>
-          <div v-for="(item, index) in trackProjects.projects" :key="index" class="project" @click="viewMore(index)">
-            <img :src="Placeholder" alt="student project image" class="project-img">
-            <div class="project__mask">
-              <div class="project-name">Dynamic Moth</div>
-              <div class="project-member">Teammate, Teammate, Teammate</div>
-            </div>
-          </div>
-          <div v-for="(item, index) in trackProjects.projects" :key="index" class="project" @click="viewMore(index)">
-            <img :src="Placeholder" alt="student project image" class="project-img">
-            <div class="project__mask">
-              <div class="project-name">Dynamic Moth</div>
-              <div class="project-member">Teammate, Teammate, Teammate</div>
+              <div class="project-name">{{ item.title }}</div>
+              <div class="project-member">{{ item.members }}</div>
             </div>
           </div>
         </div>
@@ -227,7 +199,7 @@ export default {
     .project {
       display: flex;
       flex-direction: column;
-      height: unset;
+      height: wCalcM(233);
       width: wCalcM(163);
       .project__mask {
         margin-top: hCalcM(6);

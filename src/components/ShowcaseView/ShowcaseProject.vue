@@ -6,20 +6,18 @@
 
     <div class="project-content">
       <div class="project-img-container">
-        <img :src="Placeholder" alt="project image" class="project-img"/>
+        <img :src="project.imageWeb || Placeholder" alt="project image" class="project-img"/>
       </div>
 
       <div class="project-main">
         <div class="title">{{ project.title }}</div>
         <div class="project-description">
           <div class="left">
-            In the future, human activity is responsible for rising levels of carbon dioxide in the atmosphere, and High CO2 levels will lead to global warming, which causes the sea level to rise and submerge the ground's surface, which leads to the genetic mutation of the submerged plants. As a result, the plants will grow structures adapted to the underwater environment. The variation direction of future plants will be designed based on the research and features of the current aquatic plants. Finally, the installation will show the future of the urban landscape scenario.
-            Our data include cities that would be badly affected by the rising sea level, we picked plant species from those cities, then did research on how the sea environment could affect those plant species both chemically and physically, hence made speculations on how those plants could mutate.
-            Our installation has an interaction spot that the audience could breath air into, which represents the emission of carbon dioxide, simulating the mutations of plants as well as rising sea levels on five screens.
+            {{ project.fullDescription }}
           </div>
           <div class="right">
             <div class="subtitle">GroupMember</div>
-            <div class="member">Teammate, Teammate, Teammate, Teammate</div>
+            <div class="member">{{ project.members }}</div>
           </div>
         </div>
       </div>
@@ -30,7 +28,7 @@
           <div>PREVIOUS PROJECT</div>
         </div>
 <!--          todo 列表长度-->
-        <div class="controller next" @click="getNext" v-show="project.index<(project.track==='fashion'?2:3)">
+        <div class="controller next" @click="getNext" v-show="project.index<(project.track==='fashion'?7:9)">
           <div>NEXT PROJECT</div>
           <img :src="VectorRight" alt="previous project" class="vector" />
         </div>
@@ -72,10 +70,12 @@ export default {
     getPrevious() {
       this.$store.commit('setProject', { track: this.$route.params.track, id: this.project.index - 1 });
       window.scrollTo({ top: 0, behavior: 'smooth' });
+      this.$router.replace(`${this.$route.path}?id=${this.project.index}`);
     },
     getNext() {
       this.$store.commit('setProject', { track: this.$route.params.track, id: this.project.index + 1 });
       window.scrollTo({ top: 0, behavior: 'smooth' });
+      this.$router.replace(`${this.$route.path}?id=${this.project.index}`);
     },
   },
 };

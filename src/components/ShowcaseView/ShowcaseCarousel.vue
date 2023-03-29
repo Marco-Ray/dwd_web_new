@@ -3,16 +3,18 @@
     <div class="info">
       <div class="title">{{ currentProject.title }}</div>
       <div class="members">{{ currentProject.members }}</div>
-      <div class="description">{{ currentProject.description }}</div>
+      <el-scrollbar class="description-box">
+        <div class="description">{{ currentProject.description }}</div>
+      </el-scrollbar>
     </div>
-    <el-carousel :interval="4000" type="card" :autoplay="false" trigger="click" indicator-position="none" @change="setProject">
+    <el-carousel :interval="4000" type="card" :autoplay="true" trigger="click" indicator-position="none" @change="setProject">
       <el-carousel-item v-for="(item, index) in trackProjects.projects" :key="index">
         <div class="project-img-box">
           <div class="view-more" @click="viewMore(index)">
             <div>View work</div>
             <img :src="IconVector" alt="view more" class="view-more__icon" />
           </div>
-          <img :src="Placeholder" alt="student project image" class="project-img">
+          <img :src="isMobile ? item.imageMobile : item.imageWeb ? item.imageWeb : Placeholder || Placeholder" alt="student project image" class="project-img">
         </div>
       </el-carousel-item>
     </el-carousel>
@@ -45,6 +47,9 @@ export default {
   computed: {
     currentProject() {
       return this.trackProjects.projects[this.currentId];
+    },
+    isMobile() {
+      return document.documentElement.clientWidth <= 414;
     },
   },
   methods: {
@@ -103,7 +108,6 @@ export default {
     letter-spacing: fSizeCalc(0.15);
     text-align: center;
     margin-bottom: 44px;
-    min-height: hCalc(80);
   }
 }
 
@@ -193,7 +197,7 @@ export default {
 @media screen and (max-width: 414px) {
   .info {
     .title {
-      min-height: hCalcM(64);
+      //min-height: hCalcM(64);
       margin-top: 0;
       font-size: fSizeCalc(26);
     }
@@ -201,12 +205,15 @@ export default {
       margin-bottom: hCalcM(26);
       font-size: fSizeCalc(14);
     }
-    .description {
-      font-size: fSizeCalc(12);
-      line-height: fSizeCalc(20);
-      letter-spacing: fSizeCalc(0.15);
-      width: unset;
+    .description-box {
       height: hCalcM(100);
+      margin-bottom: hCalcM(20);
+      .description {
+        font-size: fSizeCalc(12);
+        line-height: fSizeCalc(20);
+        letter-spacing: fSizeCalc(0.15);
+        width: unset;
+      }
     }
   }
 
