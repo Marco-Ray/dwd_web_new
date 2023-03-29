@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import ArrowDown from '@/assets/img/HomeView/ArrowDown.png';
+import ArrowDown from '@/assets/img/HomeView/ArrowDown.svg';
 import IconScrollDown from '@/assets/img/HomeView/icon-scrolldown.svg';
 import FastEntry from '@/components/HomeView/FastEntry.vue';
 import HelveticaFont from '@/assets/fonts/Helvetica/Helvetica.otf';

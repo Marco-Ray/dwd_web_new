@@ -248,7 +248,7 @@ export default createStore({
         {
           index: 9,
           track: 'ecology',
-          title: 'Impressions of the Caledonian Forest Through Time',
+          title: 'C-Forest 0.1',
           members: 'Laura Hutchison, Yanan Zhang',
           description: 'The glass slides have “snapshots” of a current day surviving portion of the Caledonian Forest at different points in time. Each shows points of major change, especially human-related, of the forest. The furthest slide has the oldest point, and the second near most portraying that location as it would look today.',
           fullDescription: 'A look at the reducing and changing Caledonian Forest ecology from ancient times until now. Glass slides with scenes from the same site of the Caledonian Forest at different points in time, especially at points where human activity has impacted the form of the forest. A speculative insight into the future of the forest is affected by human interactions. 5-7 A4 landscape slides set up one behind another. Accompanied by a website by QR code or monitor at the back to enhance the slides’ impact.  \n' +
@@ -256,8 +256,8 @@ export default createStore({
             'The glass slides have “snapshots” of a current day surviving portion of the Caledonian Forest at different points in time. Each shows points of major change, especially human-related, of the forest. The furthest slide has the oldest point (ancient, approx. 600 years ago), and the 2nd near most portraying that location as it would look today. The glass slides are to be viewed similarly to a shadow box or individually. \n' +
             '\n' +
             'A future slide shows this spot in a potentially renewed state, but is the only slide that is meant to be manipulatable to viewers. Parts of this slide are to be manipulated by continued handling reflecting the past exploitation of the forest and the potential of continued human interference in the natural cycle.',
-          imageWeb: 'https://i.postimg.cc/28xTPDXJ/Impressions-website.jpg',
-          imageMobile: 'https://i.postimg.cc/hjH3P195/Impressions-mobile.jpg',
+          imageWeb: 'https://i.postimg.cc/rsMdt6Vv/impression.jpg',
+          imageMobile: 'https://i.postimg.cc/B61yPyYc/impression-mobile.jpg',
         },
       ],
     },
