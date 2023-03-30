@@ -54,11 +54,7 @@ export default createStore({
           title: 'Copro',
           members: 'Yunfan Hu, Shiping Yu and Yuru Yang',
           description: 'Due to the enormous environmental pollution caused by fast fashion, we hope to enable more people to contribute to the environment through sustainable fashion, while realizing commercial value. We use blockchain data records to quantify users\' contributions to the environment and apply them to environmental games.',
-          fullDescription: 'Due to the enormous environmental pollution caused by fast fashion, we hope to enable more people to contribute to the environment through sustainable fashion, while realizing commercial value. Therefore, we plan to create a sustainable fashion module on Farfetch. Firstly, this module mainly uses blockchain technology to ensure the transparency of the entire life cycle of sustainable clothing. Secondly, we have a dedicated circular fashion module to maximize the use of each product, and we reward users participating in our community through environmentally friendly games, thereby increasing user stickiness and fun. \n' +
-            '\n' +
-            '  \n' +
-            '\n' +
-            'When users participate in our community activities, such as purchasing sustainable clothing, participating in circular fashion, and so on, they are equivalent to making contributions to the environment, such as reducing carbon emissions, and reducing waste of water resources. We use blockchain data records to quantify users\' contributions to the environment and apply them to environmental games. In the game, these contributions generate energy rewards that can be used to revive Earth creatures such as flowers and plants.',
+          fullDescription: 'Due to the enormous environmental pollution caused by fast fashion, we hope to encourage people to protect environment through sustainable fashion. So we created a sustainable fashion module on Farfetch. Firstly, we use blockchain to record the entire life cycle of each sustainable fashion product, including raw material, energy consumption, and so on, ensuring that information is open and transparent. In order to motivate users to adhere to sustainable fashion and attract more users to participate, we designed an exciting and meaningful game. The rule of the game is that when users purchase our sustainable fashion items or join our circular hub, they will gain energy values, which can be used to revive the planet\'s plants in our game, such as trees. And these plants not only exist in the virtual world in the form of NFT, but also exist in a certain corner of the earth. Users can even obtain likes or collections by forwarding their NFT to social media, thereby increasing the value of NFT. In this meaningful and exciting way, users can truly make environmental contributions to our world.',
           imageWeb: 'https://i.postimg.cc/wjr2TPB6/4-Copro.png',
           imageMobile: 'https://i.postimg.cc/X7BNZBj9/Copro.png',
         },
@@ -70,7 +66,6 @@ export default createStore({
           description: 'UFO is a PR company that helps to promote young designers. Our installation includes a Looking Glass display garment’s NFT, brochures telling the story behind the garment, display screen show our website and a ready-to-wear garment.',
           fullDescription: 'Based on the problems faced by young fashion designers due to lack of resources and supportive systems available to establish their brand image and promotion, we set up a PR company. \n' +
             ' \n' +
-            '\n' +
             'Our PR company provides young designers with: Brand Design, Website Design, Garment production, generating Garments story on blockchain, community operation and offline events, PR gift boxes to increase their publicity. We believe that fashion is not just about what you wear, but also about the story behind each designed piece. That\'s why we\'re committed to creating meaningful connections between designers, customers, and the broader fashion community through emphasis on storytelling and community building. Our purpose: Unleashing the Power of Youthful Fashion. Your Brand, Our Voice!',
           imageWeb: 'https://i.postimg.cc/XJSg9CFm/5-UFO.png',
           imageMobile: 'https://i.postimg.cc/Mpk61ZHN/UFO.png',
@@ -207,7 +202,7 @@ export default createStore({
           index: 6,
           track: 'ecology',
           title: 'Wildfire Simulator',
-          members: 'Wangc Guo, Kevin Zhu, Shirley Dong, Nicole Hu',
+          members: 'Wangc Guo, Kexin Zhu, Shirley Dong, Nicole Hu',
           description: 'The installation is a wildfire simulator, using a two-way interaction. The display section uses light and laser cut patterns to represent fire. Whilst the interactive section, human activity are categorised into five factors where users need to pull, symbolising the impact of human forces on the balance of the ecosystem.',
           fullDescription: 'Wildfires – how is human behaviour involved? \n' +
             '\n' +

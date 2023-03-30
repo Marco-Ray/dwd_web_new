@@ -89,6 +89,15 @@
       </div>
 
       <div data-aos="fade-up">
+        <div class="text">
+          <div>Brian Proudfoot</div>
+          <div>Dr. Asad Khan</div>
+          <div>Alexandre Colle</div>
+          <div>Patrick White</div>
+        </div>
+      </div>
+
+      <div data-aos="fade-up">
         <div class="sub-title">Design Informatics Workshop Technician</div>
         <div class="text">
           <div>Mark Kobine</div>

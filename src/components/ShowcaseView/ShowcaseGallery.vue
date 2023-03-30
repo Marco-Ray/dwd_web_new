@@ -216,7 +216,7 @@ export default {
           font-size: fSizeCalc(16);
         }
 
-        &:hover {
+        &:hover, &:active{
           display: block;
           justify-content: start;
           align-items: start;
