@@ -17,8 +17,9 @@
 
       <div data-aos="fade-up">
         <div class="sub-title catalogue">Exhibition Catalogue</div>
-        <!--    todo link-->
-        <div class="text pdf-link">PDF Download</div>
+        <div class="text pdf-link">
+          <a href="/catalogue_converted.pdf" target="_blank" alt="catalogue" class="link">PDF Download</a>
+        </div>
       </div>
 
       <div data-aos="fade-up">
