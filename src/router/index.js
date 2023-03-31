@@ -41,8 +41,18 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
-  scrollBehavior(to) {
+  scrollBehavior(to, from) {
     if (to.hash) {
+      if (to === from) {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            resolve({
+              el: to.hash,
+              behavior: 'smooth',
+            });
+          }, 600);
+        });
+      }
       return new Promise((resolve) => {
         setTimeout(() => {
           resolve({

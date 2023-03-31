@@ -11,7 +11,7 @@
           Under the curatorial lead of Dr Patricia Wu Wu, students have created a series of responses to explore ‘data-as-a-material’, showcased as part of the Edinburgh Science Festival. The works question more than human and under-represented "voices" in data collection or seek to examine ways in which we could adorn our human selves through worn-data interfaces, ranging from interactive artefacts, data physicalisations, climate-focused games, to data-driven storytelling and beyond.
           <br/>
           <br/>
-          The student showcase takes place from 1-7 April (10am - 4pm), at Inspace, 1 Crichton St, Newington, Edinburgh EH8 9AB. For directions to the venue, please see <a href="https://www.ed.ac.uk/maps/maps" class="link" target="_blank">the campus map</a>. <!-- todo link -->
+          The student showcase takes place from 1-7 April (10am - 4pm), at Inspace, 1 Crichton St, Newington, Edinburgh EH8 9AB. For directions to the venue, please see <a href="https://www.ed.ac.uk/maps/maps" class="link" target="_blank">the campus map</a>.
         </div>
       </div>
 
@@ -40,6 +40,12 @@
         <div class="text social-media-link">
           <div><a href="https://www.instagram.com/designwithdata/" target="_blank" alt="Design with Data" class="link">@Designwithdata</a></div>
           <div><a href="https://www.instagram.com/inspacegallery/" target="_blank" alt="Inspace Gallery" class="link">@inspacegallery</a></div>
+        </div>
+      </div>
+
+      <div data-aos="fade-up">
+        <div class="clarify">
+          The website has been designed and produced by Design with Data students as part of their course.
         </div>
       </div>
     </div>
@@ -200,6 +206,11 @@ export default {
       margin-right: wCalc(13);
     }
   }
+
+  .clarify {
+    font-size: fSizeCalc(14);
+    margin-top: hCalc(60);
+  }
 }
 
 .link {
@@ -228,6 +239,11 @@ export default {
       width: wCalcM(138);
       height: wCalcM(55);
       margin-bottom: hCalcM(15);
+    }
+
+    .clarify {
+      margin-top: hCalcM(40);
+      margin-bottom: hCalcM(40);
     }
   }
 }
